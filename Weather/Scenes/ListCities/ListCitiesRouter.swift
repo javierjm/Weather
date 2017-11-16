@@ -12,49 +12,47 @@
 
 import UIKit
 
-@objc protocol ListCitiesRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol ListCitiesRoutingLogic {
+    func routeToShowCity(segue: UIStoryboardSegue?)
 }
 
-protocol ListCitiesDataPassing
-{
+protocol ListCitiesDataPassing {
   var dataStore: ListCitiesDataStore? { get }
 }
 
-class ListCitiesRouter: NSObject, ListCitiesRoutingLogic, ListCitiesDataPassing
-{
-  weak var viewController: ListCitiesViewController?
-  var dataStore: ListCitiesDataStore?
+class ListCitiesRouter: NSObject, ListCitiesRoutingLogic, ListCitiesDataPassing {
+  
+    weak var viewController: ListCitiesViewController?
+    var dataStore: ListCitiesDataStore?
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
+    
+    func routeToShowCity(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! ShowCityViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToShowCity(source: dataStore!, destination: &destinationDS)
+        } else {
+            let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "ShowCityViewController") as! ShowCityViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToShowCity(source: dataStore!, destination: &destinationDS)
+            navigateToShowCity(source: viewController!, destination: destinationVC)
+        }
+    }
+    
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: ListCitiesViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
+  func navigateToShowCity(source: ListCitiesViewController, destination: ShowCityViewController) {
+    source.show(destination, sender: nil)
+  }
   
   // MARK: Passing data
-  
-  //func passDataToSomewhere(source: ListCitiesDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    
+    func passDataToShowCity(source: ListCitiesDataStore, destination: inout ShowCityDataStore) {
+//        destination.name = source.name
+        let selectedRow = viewController?.tableView.indexPathForSelectedRow?.row
+        let city = source.cities?[selectedRow!]
+        destination.city = city
+    }
 }

@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesInteractor.swift"
-            timestampString = "532554865.405459"
+            timestampString = "532566113.69898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "fetchCities(request:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather/Scenes/ListCities/ListCitiesInteractor.swift"
-            timestampString = "532554865.406109"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "fetchCities(request:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Common/Services/WeatherAPI.swift"
-            timestampString = "532554865.406266"
+            timestampString = "532566113.699641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -58,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Common/Services/WeatherAPI.swift"
-            timestampString = "532554865.406766"
+            timestampString = "532566113.700078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -106,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesViewController.swift"
-            timestampString = "532554865.406894"
+            timestampString = "532566113.700195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -122,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesViewController.swift"
-            timestampString = "532554865.40817"
+            timestampString = "532566113.70168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -138,12 +122,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.408786"
+            timestampString = "532566113.70263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "init(dictionary:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "City"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
+            timestampString = "532566113.70323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "iconImageNameForCode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,28 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409118"
+            timestampString = "532566113.703396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "init(dictionary:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409207"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "init(dictionary:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "iconImageNameForCode()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -218,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409291"
+            timestampString = "532566113.703539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
             <Locations>
@@ -266,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409374"
+            timestampString = "532566113.703681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,12 +266,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409456"
+            timestampString = "532566113.703818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "init(dictionary:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "iconImageNameForCode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -298,13 +282,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.409533"
+            timestampString = "532566113.70394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "City"
-            landmarkType = "14">
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -346,13 +330,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.40961"
+            timestampString = "532566113.704072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "init(dictionary:)"
-            landmarkType = "7">
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "Main"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -362,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesViewController.swift"
-            timestampString = "532554865.409688"
+            timestampString = "532566113.704209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -378,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesViewController.swift"
-            timestampString = "532554865.410239"
+            timestampString = "532566113.705138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -394,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesPresenter.swift"
-            timestampString = "532554865.41069"
+            timestampString = "532566113.705892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -441,13 +425,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather/Scenes/ListCities/ListCitiesPresenter.swift"
-            timestampString = "532554865.411011"
+            filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
+            timestampString = "532566113.706384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "iconImageNameForCode(code:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "iconImageNameForCode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -458,29 +442,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.411098"
+            timestampString = "532566113.706518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "init(dictionary:)"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "iconImageNameForCode()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.411173"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "Weather"
-            landmarkType = "14">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -522,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.411246"
+            timestampString = "532566113.706631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesModels.swift"
-            timestampString = "532554865.411313"
+            timestampString = "532566113.706738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesInteractor.swift"
-            timestampString = "532554865.411381"
+            timestampString = "532566113.706847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesInteractor.swift"
-            timestampString = "532554865.411451"
+            timestampString = "532566113.706956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "locationManager(_:didFailWithError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,12 +554,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Scenes/ListCities/ListCitiesInteractor.swift"
-            timestampString = "532554865.411518"
+            timestampString = "532566113.707066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "fetchLocationAndCities(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Scenes/ListCities/ListCitiesRouter.swift"
+            timestampString = "532566113.707176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "passDataToShowCity(source:destination:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Scenes/ListCities/ListCitiesRouter.swift"
+            timestampString = "532566113.707635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "routeToShowCity(segue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Scenes/ListCities/ListCitiesRouter.swift"
+            timestampString = "532566113.707739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "navigateToShowCity(source:destination:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

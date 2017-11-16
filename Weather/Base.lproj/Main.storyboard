@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -65,6 +67,7 @@
                                     <outlet property="cityNameLabel" destination="TCY-He-Cj9" id="mi2-rt-ALX"/>
                                     <outlet property="tempetartureLabel" destination="OsC-fv-MUW" id="D56-da-Umh"/>
                                     <outlet property="wheaterImage" destination="kww-85-t9M" id="0bp-9N-5SJ"/>
+                                    <segue destination="TPI-FM-PIL" kind="show" identifier="ShowCity" id="OlK-2f-VD3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,6 +84,276 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tr4-LO-Lqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="721.875" y="82.394366197183103"/>
+        </scene>
+        <!--Show City View Controller-->
+        <scene sceneID="9dp-dr-Jp7">
+            <objects>
+                <viewController storyboardIdentifier="ShowCityViewController" id="TPI-FM-PIL" customClass="ShowCityViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cqb-0s-4gq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWe-0P-aDe">
+                                <rect key="frame" x="16" y="289" width="288" height="238"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCn-vx-5dt">
+                                        <rect key="frame" x="197" y="52" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainy" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-rr-kIH">
+                                        <rect key="frame" x="42" y="122" width="24" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="QN5-gl-5zB"/>
+                                            <constraint firstAttribute="height" constant="16" id="qLP-V8-acr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp-max" translatesAutoresizingMaskIntoConstraints="NO" id="h7L-GF-K82">
+                                        <rect key="frame" x="226" y="20" width="11" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="11" id="hKh-2Z-J8s"/>
+                                            <constraint firstAttribute="height" constant="24" id="nYx-wv-8PH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp-min" translatesAutoresizingMaskIntoConstraints="NO" id="T5O-jq-6or">
+                                        <rect key="frame" x="49" y="20" width="11" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="11" id="1DI-1h-mkM"/>
+                                            <constraint firstAttribute="height" constant="24" id="uXd-Ir-rmU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdE-gR-uVo">
+                                        <rect key="frame" x="20" y="52" width="69" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="zYW-5L-fUv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-Fe-3nu">
+                                        <rect key="frame" x="109" y="158" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fi-DO-y5O">
+                                        <rect key="frame" x="197" y="158" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W30-eU-HnM">
+                                        <rect key="frame" x="109" y="186" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D47-Ob-ZUm">
+                                        <rect key="frame" x="20" y="158" width="69" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="2L8-pk-fII"/>
+                                            <constraint firstAttribute="width" constant="69" id="iDg-79-2xN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy1-Nk-8Fa">
+                                        <rect key="frame" x="109" y="52" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atm" translatesAutoresizingMaskIntoConstraints="NO" id="exe-bH-LJM">
+                                        <rect key="frame" x="134" y="118" width="19" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="19" id="4xY-xX-7Y3"/>
+                                            <constraint firstAttribute="height" constant="24" id="ZMA-zb-1VL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1y-3H-rVc">
+                                        <rect key="frame" x="197" y="80" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-UM-pet">
+                                        <rect key="frame" x="20" y="187" width="69" height="29"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp-med" translatesAutoresizingMaskIntoConstraints="NO" id="BmX-97-atB">
+                                        <rect key="frame" x="138" y="20" width="11" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="11" id="QTr-D5-W6i"/>
+                                            <constraint firstAttribute="height" constant="24" id="fgC-w4-wCl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-vP-G75">
+                                        <rect key="frame" x="197" y="186" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-PV-f0K">
+                                        <rect key="frame" x="109" y="80" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windy" translatesAutoresizingMaskIntoConstraints="NO" id="Vnz-wl-BE0">
+                                        <rect key="frame" x="219.5" y="122" width="24" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="CRX-Xg-Gfq"/>
+                                            <constraint firstAttribute="width" constant="24" id="iEs-31-xNC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWt-ih-D9G">
+                                        <rect key="frame" x="20" y="80" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BmX-97-atB" firstAttribute="centerY" secondItem="T5O-jq-6or" secondAttribute="centerY" id="2tW-6D-5Ga"/>
+                                    <constraint firstItem="BmX-97-atB" firstAttribute="leading" secondItem="T5O-jq-6or" secondAttribute="trailing" constant="78" id="3HX-WP-9BV"/>
+                                    <constraint firstItem="W30-eU-HnM" firstAttribute="top" secondItem="u5Z-Fe-3nu" secondAttribute="bottom" id="3WK-pJ-QI8"/>
+                                    <constraint firstItem="D47-Ob-ZUm" firstAttribute="centerX" secondItem="xWt-ih-D9G" secondAttribute="centerX" id="6RI-AQ-2yL"/>
+                                    <constraint firstItem="C1y-3H-rVc" firstAttribute="height" secondItem="WCn-vx-5dt" secondAttribute="height" id="7vs-AQ-7yp"/>
+                                    <constraint firstItem="4kO-vP-G75" firstAttribute="width" secondItem="5fi-DO-y5O" secondAttribute="width" id="8sR-sw-vw0"/>
+                                    <constraint firstItem="h7L-GF-K82" firstAttribute="centerY" secondItem="BmX-97-atB" secondAttribute="centerY" id="9XT-mD-40w"/>
+                                    <constraint firstItem="C1y-3H-rVc" firstAttribute="centerX" secondItem="WCn-vx-5dt" secondAttribute="centerX" id="9ud-nE-MSO"/>
+                                    <constraint firstItem="5fi-DO-y5O" firstAttribute="top" secondItem="Vnz-wl-BE0" secondAttribute="bottom" constant="20" id="DvY-f7-crD"/>
+                                    <constraint firstItem="Xy1-Nk-8Fa" firstAttribute="leading" secondItem="HdE-gR-uVo" secondAttribute="trailing" constant="20" id="EKN-OZ-Knh"/>
+                                    <constraint firstItem="GDx-UM-pet" firstAttribute="width" secondItem="D47-Ob-ZUm" secondAttribute="width" id="Eeq-nG-A3F"/>
+                                    <constraint firstItem="5fi-DO-y5O" firstAttribute="width" secondItem="C1y-3H-rVc" secondAttribute="width" id="FJc-Cg-wqL"/>
+                                    <constraint firstItem="C1y-3H-rVc" firstAttribute="top" secondItem="WCn-vx-5dt" secondAttribute="bottom" id="GEU-RT-gWW"/>
+                                    <constraint firstItem="5fi-DO-y5O" firstAttribute="height" secondItem="C1y-3H-rVc" secondAttribute="height" id="JHa-AL-mBD"/>
+                                    <constraint firstItem="pq1-rr-kIH" firstAttribute="centerX" secondItem="T5O-jq-6or" secondAttribute="centerX" id="KcA-Ke-qpW"/>
+                                    <constraint firstItem="u5Z-Fe-3nu" firstAttribute="centerX" secondItem="kBb-PV-f0K" secondAttribute="centerX" id="Kms-hU-3Fn"/>
+                                    <constraint firstItem="4kO-vP-G75" firstAttribute="top" secondItem="5fi-DO-y5O" secondAttribute="bottom" id="L4Z-X0-LdF"/>
+                                    <constraint firstItem="exe-bH-LJM" firstAttribute="top" secondItem="kBb-PV-f0K" secondAttribute="bottom" constant="10" id="Llb-Vn-whV"/>
+                                    <constraint firstItem="W30-eU-HnM" firstAttribute="height" secondItem="u5Z-Fe-3nu" secondAttribute="height" id="Low-yR-wCs"/>
+                                    <constraint firstItem="exe-bH-LJM" firstAttribute="centerX" secondItem="BmX-97-atB" secondAttribute="centerX" id="M38-26-LaY"/>
+                                    <constraint firstItem="C1y-3H-rVc" firstAttribute="width" secondItem="WCn-vx-5dt" secondAttribute="width" id="MVf-N5-PqX"/>
+                                    <constraint firstItem="4kO-vP-G75" firstAttribute="height" secondItem="5fi-DO-y5O" secondAttribute="height" id="MqS-cJ-MZo"/>
+                                    <constraint firstItem="kBb-PV-f0K" firstAttribute="width" secondItem="Xy1-Nk-8Fa" secondAttribute="width" id="O3y-ue-xvH"/>
+                                    <constraint firstItem="xWt-ih-D9G" firstAttribute="width" secondItem="HdE-gR-uVo" secondAttribute="width" id="OVr-22-ieY"/>
+                                    <constraint firstItem="u5Z-Fe-3nu" firstAttribute="width" secondItem="kBb-PV-f0K" secondAttribute="width" id="Omb-5B-PHx"/>
+                                    <constraint firstItem="kBb-PV-f0K" firstAttribute="top" secondItem="Xy1-Nk-8Fa" secondAttribute="bottom" id="PgI-xS-Xg7"/>
+                                    <constraint firstItem="D47-Ob-ZUm" firstAttribute="top" secondItem="pq1-rr-kIH" secondAttribute="bottom" constant="20" id="QHc-g7-D0H"/>
+                                    <constraint firstItem="Xy1-Nk-8Fa" firstAttribute="height" secondItem="HdE-gR-uVo" secondAttribute="height" id="QtN-Q7-hsT"/>
+                                    <constraint firstAttribute="trailing" secondItem="C1y-3H-rVc" secondAttribute="trailing" constant="22" id="TEW-eR-irS"/>
+                                    <constraint firstItem="WCn-vx-5dt" firstAttribute="width" secondItem="Xy1-Nk-8Fa" secondAttribute="width" id="TeT-A3-ZUn"/>
+                                    <constraint firstItem="WCn-vx-5dt" firstAttribute="centerX" secondItem="h7L-GF-K82" secondAttribute="centerX" id="Ts0-qv-2lE"/>
+                                    <constraint firstItem="GDx-UM-pet" firstAttribute="top" secondItem="D47-Ob-ZUm" secondAttribute="bottom" id="UP9-fR-uN1"/>
+                                    <constraint firstItem="kBb-PV-f0K" firstAttribute="height" secondItem="Xy1-Nk-8Fa" secondAttribute="height" id="Wpl-mC-Nya"/>
+                                    <constraint firstItem="Xy1-Nk-8Fa" firstAttribute="centerY" secondItem="HdE-gR-uVo" secondAttribute="centerY" id="Xc1-fM-og1"/>
+                                    <constraint firstItem="kBb-PV-f0K" firstAttribute="centerX" secondItem="Xy1-Nk-8Fa" secondAttribute="centerX" id="Yax-he-MPD"/>
+                                    <constraint firstItem="Vnz-wl-BE0" firstAttribute="centerX" secondItem="h7L-GF-K82" secondAttribute="centerX" id="ZW1-fg-nV6"/>
+                                    <constraint firstItem="xWt-ih-D9G" firstAttribute="top" secondItem="HdE-gR-uVo" secondAttribute="bottom" id="ZWa-sS-Nr7"/>
+                                    <constraint firstItem="5fi-DO-y5O" firstAttribute="centerX" secondItem="C1y-3H-rVc" secondAttribute="centerX" id="aCk-FX-jmE"/>
+                                    <constraint firstItem="WCn-vx-5dt" firstAttribute="height" secondItem="Xy1-Nk-8Fa" secondAttribute="height" id="aQU-Xx-aio"/>
+                                    <constraint firstItem="GDx-UM-pet" firstAttribute="leading" secondItem="D47-Ob-ZUm" secondAttribute="trailing" constant="-69" id="bHq-QE-MBs"/>
+                                    <constraint firstItem="pq1-rr-kIH" firstAttribute="top" secondItem="xWt-ih-D9G" secondAttribute="bottom" constant="14" id="bQo-18-bsI"/>
+                                    <constraint firstItem="T5O-jq-6or" firstAttribute="leading" secondItem="fWe-0P-aDe" secondAttribute="leading" constant="49" id="cej-em-QAh"/>
+                                    <constraint firstItem="HdE-gR-uVo" firstAttribute="top" secondItem="T5O-jq-6or" secondAttribute="bottom" constant="8" id="dQu-lv-03j"/>
+                                    <constraint firstItem="4kO-vP-G75" firstAttribute="centerX" secondItem="5fi-DO-y5O" secondAttribute="centerX" id="haM-xn-Ie4"/>
+                                    <constraint firstItem="u5Z-Fe-3nu" firstAttribute="height" secondItem="kBb-PV-f0K" secondAttribute="height" id="iMb-FO-dqm"/>
+                                    <constraint firstItem="GDx-UM-pet" firstAttribute="height" secondItem="D47-Ob-ZUm" secondAttribute="height" id="j2M-M0-wMt"/>
+                                    <constraint firstItem="Xy1-Nk-8Fa" firstAttribute="width" secondItem="HdE-gR-uVo" secondAttribute="width" id="jCU-9D-3tq"/>
+                                    <constraint firstItem="u5Z-Fe-3nu" firstAttribute="top" secondItem="exe-bH-LJM" secondAttribute="bottom" constant="16" id="kd5-cm-0M3"/>
+                                    <constraint firstItem="h7L-GF-K82" firstAttribute="leading" secondItem="BmX-97-atB" secondAttribute="trailing" constant="77" id="la9-xc-Zm6"/>
+                                    <constraint firstItem="WCn-vx-5dt" firstAttribute="centerY" secondItem="Xy1-Nk-8Fa" secondAttribute="centerY" id="nJT-Cy-akI"/>
+                                    <constraint firstItem="xWt-ih-D9G" firstAttribute="centerX" secondItem="HdE-gR-uVo" secondAttribute="centerX" id="pCx-BA-uS5"/>
+                                    <constraint firstAttribute="height" constant="238" id="qJI-ar-rlv"/>
+                                    <constraint firstItem="Vnz-wl-BE0" firstAttribute="top" secondItem="C1y-3H-rVc" secondAttribute="bottom" constant="14" id="r3B-iY-c1i"/>
+                                    <constraint firstItem="W30-eU-HnM" firstAttribute="centerX" secondItem="u5Z-Fe-3nu" secondAttribute="centerX" id="sDQ-HD-Twm"/>
+                                    <constraint firstItem="HdE-gR-uVo" firstAttribute="centerX" secondItem="T5O-jq-6or" secondAttribute="centerX" id="tzv-rz-idU"/>
+                                    <constraint firstItem="W30-eU-HnM" firstAttribute="width" secondItem="u5Z-Fe-3nu" secondAttribute="width" id="xrd-HW-KEO"/>
+                                    <constraint firstItem="T5O-jq-6or" firstAttribute="top" secondItem="fWe-0P-aDe" secondAttribute="top" constant="20" id="xte-Wp-5Zo"/>
+                                    <constraint firstItem="xWt-ih-D9G" firstAttribute="height" secondItem="HdE-gR-uVo" secondAttribute="height" id="zVJ-lC-rJb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBd-nF-LcV">
+                                <rect key="frame" x="0.0" y="271.5" width="320" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun-cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-6Q-tum">
+                                <rect key="frame" x="112.5" y="153.5" width="95" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="XZE-I5-SKP"/>
+                                    <constraint firstAttribute="width" secondItem="Tyh-6Q-tum" secondAttribute="height" multiplier="95:71" id="ZWh-EQ-NPU"/>
+                                    <constraint firstAttribute="width" constant="95" id="cdA-Re-xv1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-icon-circle-bg" translatesAutoresizingMaskIntoConstraints="NO" id="oD4-u4-O9V">
+                                <rect key="frame" x="150.5" y="192.5" width="85" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gco-Id-Wap"/>
+                                    <constraint firstAttribute="width" secondItem="oD4-u4-O9V" secondAttribute="height" multiplier="17:12" id="OyE-RQ-bbf"/>
+                                    <constraint firstAttribute="width" constant="85" id="XPa-ZA-HOS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Zc-ofN">
+                                <rect key="frame" x="167.5" y="208.5" width="51" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="F3q-yw-t5U"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="u6I-Tz-ZNi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="26"/>
+                                <color key="textColor" red="0.043137254901960784" green="0.47450980392156861" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5KY-z2-UFx">
+                                <rect key="frame" x="37" y="64" width="246" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="WqT-sD-klb"/>
+                                    <constraint firstAttribute="width" constant="246" id="fg0-s1-ycy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5KY-z2-UFx" firstAttribute="top" secondItem="Cqb-0s-4gq" secondAttribute="topMargin" id="4vm-Sr-Fts"/>
+                            <constraint firstItem="fcP-Zc-ofN" firstAttribute="centerY" secondItem="oD4-u4-O9V" secondAttribute="centerY" id="EPS-Yu-5nu"/>
+                            <constraint firstItem="oD4-u4-O9V" firstAttribute="top" secondItem="Tyh-6Q-tum" secondAttribute="bottom" constant="-31.5" id="F3e-6n-DfX"/>
+                            <constraint firstItem="5KY-z2-UFx" firstAttribute="centerX" secondItem="Cqb-0s-4gq" secondAttribute="centerX" id="I5g-g3-vX3"/>
+                            <constraint firstItem="8GR-0L-JCV" firstAttribute="bottom" secondItem="fWe-0P-aDe" secondAttribute="bottom" constant="41" id="I7p-Ad-jA4"/>
+                            <constraint firstItem="8GR-0L-JCV" firstAttribute="trailing" secondItem="DBd-nF-LcV" secondAttribute="trailing" id="Kmb-a2-pQ2"/>
+                            <constraint firstItem="Tyh-6Q-tum" firstAttribute="centerX" secondItem="5KY-z2-UFx" secondAttribute="centerX" id="ME8-Wj-8cg"/>
+                            <constraint firstItem="8GR-0L-JCV" firstAttribute="trailing" secondItem="fWe-0P-aDe" secondAttribute="trailing" constant="16" id="U6t-9T-qAu"/>
+                            <constraint firstItem="DBd-nF-LcV" firstAttribute="top" secondItem="oD4-u4-O9V" secondAttribute="bottom" constant="19" id="dAj-38-72b"/>
+                            <constraint firstItem="oD4-u4-O9V" firstAttribute="leading" secondItem="Tyh-6Q-tum" secondAttribute="trailing" constant="-56.5" id="l6p-vy-zM1"/>
+                            <constraint firstItem="fWe-0P-aDe" firstAttribute="leading" secondItem="8GR-0L-JCV" secondAttribute="leading" constant="16" id="o7X-dz-fCG"/>
+                            <constraint firstItem="Tyh-6Q-tum" firstAttribute="centerY" secondItem="5KY-z2-UFx" secondAttribute="centerY" id="p1K-aR-XAz"/>
+                            <constraint firstItem="DBd-nF-LcV" firstAttribute="centerX" secondItem="5KY-z2-UFx" secondAttribute="centerX" id="szl-77-nUL"/>
+                            <constraint firstItem="fcP-Zc-ofN" firstAttribute="centerX" secondItem="oD4-u4-O9V" secondAttribute="centerX" id="wq6-Da-7RX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8GR-0L-JCV"/>
+                    </view>
+                    <connections>
+                        <outlet property="atmLabel" destination="u5Z-Fe-3nu" id="Y4h-0W-hau"/>
+                        <outlet property="humidityLabel" destination="D47-Ob-ZUm" id="eUe-SA-pPJ"/>
+                        <outlet property="tempLabel" destination="fcP-Zc-ofN" id="nXV-Kq-twr"/>
+                        <outlet property="tempMaxLabel" destination="WCn-vx-5dt" id="c2t-to-WFU"/>
+                        <outlet property="tempMedLabel" destination="Xy1-Nk-8Fa" id="led-M4-d1E"/>
+                        <outlet property="tempMinLabel" destination="HdE-gR-uVo" id="Rcd-Gs-Lw9"/>
+                        <outlet property="weatherDescLabel" destination="DBd-nF-LcV" id="M9q-5C-ZRC"/>
+                        <outlet property="weatherImage" destination="Tyh-6Q-tum" id="h67-CU-vU3"/>
+                        <outlet property="windSpeedLabel" destination="5fi-DO-y5O" id="Qsl-fj-20j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sl5-Mc-3Cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.5" y="81.338028169014081"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kNB-6Z-nE0">
@@ -101,4 +374,15 @@
             <point key="canvasLocation" x="-38.399999999999999" y="83.658170914542737"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Circle_bg" width="302" height="307"/>
+        <image name="atm" width="37" height="45"/>
+        <image name="rainy" width="86" height="71"/>
+        <image name="sun-cloudy" width="90" height="71"/>
+        <image name="temp-max" width="22" height="46"/>
+        <image name="temp-med" width="21" height="45"/>
+        <image name="temp-min" width="22" height="46"/>
+        <image name="weather-icon-circle-bg" width="189" height="189"/>
+        <image name="windy" width="46" height="31"/>
+    </resources>
 </document>

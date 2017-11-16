@@ -18,7 +18,7 @@ protocol ListCitiesBusinessLogic {
 }
 
 protocol ListCitiesDataStore {
-  //var name: String { get set }
+    var cities: [City]? { get }
 }
 
 class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStore {
@@ -26,6 +26,8 @@ class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStor
     var presenter: ListCitiesPresentationLogic?
     var worker: ListCitiesWorker?
     var locationManager = CLLocationManager()
+    var cities: [City]?
+
     
     var request = ListCities.FetchCities.Request()
     var coordinates = (lat: "", lon: "") {
@@ -36,7 +38,6 @@ class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStor
 
     func fetchCities(request: ListCities.FetchCities.Request) {
         worker = ListCitiesWorker(citiesStore: WeatherAPI())
-        //let coordinates = findCoordinates()
         worker?.fetchCities(lat: coordinates.lat, lon: coordinates.lon, completionHandler: { (result: CitiesStoreResult<[City]>) in
             switch(result){
                 case .Failure(let error):
@@ -44,7 +45,7 @@ class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStor
                     // Call presenter with error description
                     self.presenter?.presentError(response: error)
                 case .Success(let results):
-                    print("Fetched proprely these cities: \(results.count)")
+                    self.cities = results
                     let response = ListCities.FetchCities.Response(cities: results)
                     self.presenter?.presentCities(response: response)
             }
@@ -54,14 +55,6 @@ class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStor
     
     func fetchLocationAndCities(request: ListCities.FetchCities.Request) {
         self.request = request
-
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.requestWhenInUseAuthorization()
-//
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.startUpdatingLocation()
-//        }
         locationManager.delegate = self
         locationManager.requestLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

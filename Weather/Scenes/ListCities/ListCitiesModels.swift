@@ -42,31 +42,68 @@ struct City {
     var main: Main
     var weather: Weather?
     var wind: Wind
+    var sys: Sys
+
     
     init(dictionary: [String: Any]){
         self.cityId = String(describing: dictionary["id"] as? Int ?? 0)
         self.name = dictionary["name"] as? String ?? ""
         self.main = Main(dictionary: dictionary["main"] as? [String: Any] ?? [:])
         self.wind =    Wind(dictionary: dictionary["wind"] as? [String: Any] ?? [:])
+        self.sys =    Sys(dictionary: dictionary["sys"] as? [String: Any] ?? [:])
         let dict = dictionary["weather"] as? [Any]
         if let weatherDict = (dict?.first as? [String: Any]) {
                 self.weather = Weather(dictionary: weatherDict)
         }
         
     }
+    
+    func iconImageNameForCode() -> String{
+        if let code = self.weather?.code {
+            switch code {
+            case 800:
+                return "sunny"
+            case 801 ..< 805:
+                return "sun-cloudy"
+            case 500 ..< 502:
+                return "sun-rainy"
+            case 502 ..< 532:
+                return "rainy"
+            case 905:
+                return "windy"
+            default:
+                return "sunny"
+            }
+        }
+        return ""
+    }
 }
 
 struct Main{
     var temp: String
     var humdity: String
+    var tempMin: String
+    var tempMax: String
+    var atm: String
+    
     
     init(dictionary: [String: Any]){
         self.temp = String(describing: dictionary["temp"] as? Float ?? 0)
         self.humdity = String(describing: dictionary["humidity"] as? Int ?? 0)
-
+        self.tempMin = String(describing: dictionary["temp_min"] as? Float ?? 0)
+        self.tempMax = String(describing: dictionary["temp_max"] as? Float ?? 0)
+        self.atm = String(describing: dictionary["pressure"] as? Float ?? 0)
     }
 }
 
+struct Sys{
+    var country: String
+
+    init(dictionary: [String: Any]){
+        self.country = dictionary["country"] as? String ?? ""
+    }
+
+}
 struct Weather {
     var weatherDescription: String
     var code: Int
