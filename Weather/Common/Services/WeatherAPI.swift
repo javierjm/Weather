@@ -9,7 +9,7 @@ class WeatherAPI: CitiesStoreProtocol //, WeatherStoreUtilityProtocol
 
     // MARK: - CRUD operations - Generic enum result type
     func fetchCities(lat: String, lon: String, completionHandler: @escaping CitiesStoreFetchCitiesCompletionHandler) {
-        let urlString = "\(Constants.Endpoint.citiesURL)&lat=\(lat)&lon=\(lon)"
+        let urlString = "\(Constants.Endpoint.citiesURL)&lat=9.9&lon=\(lon)"
         Alamofire.request(urlString).validate().responseJSON { response in
             switch response.result {
             case .success:

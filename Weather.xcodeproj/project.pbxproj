@@ -20,6 +20,10 @@
 		3B45CC731FBD03F100F0196F /* ListCitiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45CC6D1FBD03F100F0196F /* ListCitiesRouter.swift */; };
 		3B45CC741FBD03F100F0196F /* ListCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45CC6E1FBD03F100F0196F /* ListCitiesViewController.swift */; };
 		3B45CC751FBD03F100F0196F /* ListCitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45CC6F1FBD03F100F0196F /* ListCitiesWorker.swift */; };
+		3B4DC0BF1FBDCCC30048A3FE /* Arvo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DC0BD1FBDCC270048A3FE /* Arvo-Bold.ttf */; };
+		3B4DC0C01FBDCCC70048A3FE /* Arvo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DC0BC1FBDCC270048A3FE /* Arvo-BoldItalic.ttf */; };
+		3B4DC0C11FBDCCC70048A3FE /* Arvo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DC0BB1FBDCC260048A3FE /* Arvo-Italic.ttf */; };
+		3B4DC0C21FBDCCC70048A3FE /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DC0BE1FBDCC270048A3FE /* Arvo-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -229,7 +233,11 @@
 			files = (
 				3B1599FD1FBB77F300A05398 /* LaunchScreen.storyboard in Resources */,
 				3B1599FA1FBB77F300A05398 /* Assets.xcassets in Resources */,
+				3B4DC0C11FBDCCC70048A3FE /* Arvo-Italic.ttf in Resources */,
+				3B4DC0C21FBDCCC70048A3FE /* Arvo-Regular.ttf in Resources */,
 				3B1599F81FBB77F300A05398 /* Main.storyboard in Resources */,
+				3B4DC0C01FBDCCC70048A3FE /* Arvo-BoldItalic.ttf in Resources */,
+				3B4DC0BF1FBDCCC30048A3FE /* Arvo-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

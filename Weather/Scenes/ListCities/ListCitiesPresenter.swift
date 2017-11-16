@@ -24,14 +24,14 @@ class ListCitiesPresenter: ListCitiesPresentationLogic
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
+        dateFormatter.timeStyle = .short
         return dateFormatter
     }()
     
     func presentCities(response: ListCities.FetchCities.Response) {
         
-        let citiesViewModel = response.cities.map{ListCities.FetchCities.ViewModel.DisplayedCity(cityId: $0.cityId, name: $0.name, temperature: $0.main.temp)}
-        let dateNow = dateFormatter.string(from: Date())
+        let citiesViewModel = response.cities.map{ListCities.FetchCities.ViewModel.DisplayedCity(cityId: $0.cityId, name: $0.name, temperature: "\($0.main.temp)°", weatherImageName: self.iconImageNameForCode(code: $0.weather?.code))}
+        let dateNow =  "Last Updated: \(dateFormatter.string(from: Date()))"
         let viewModel = ListCities.FetchCities.ViewModel(displayedCities: citiesViewModel, lastUpdate:dateNow)
         viewController?.displayCities(viewModel: viewModel)
     }
@@ -40,9 +40,24 @@ class ListCitiesPresenter: ListCitiesPresentationLogic
         
     }
     
-//  func presentSomething(response: ListCities.FetchCities.Response)
-//  {
-//    let viewModel = ListCities.FetchCities.ViewModel()
-//    viewController?.displaySomething(viewModel: viewModel)
-//  }
+    func iconImageNameForCode(code: Int?) -> String{
+        if let code = code {
+            switch code {
+            case 800:
+                return "sunny"
+            case 801 ..< 805:
+                return "sun-cloudy"
+            case 500 ..< 502:
+                return "sun-rainy"
+            case 502 ..< 532:
+                return "rainy"
+            case 905:
+                return "windy"
+            default:
+                return "sunny"
+            }
+        }
+        return ""
+    }
+    
 }

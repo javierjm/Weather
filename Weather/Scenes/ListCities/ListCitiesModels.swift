@@ -28,6 +28,7 @@ enum ListCities {
             var cityId: String
             var name: String
             var temperature: String
+            var weatherImageName: String
         }
         var displayedCities: [DisplayedCity]
         var lastUpdate: String
@@ -39,15 +40,19 @@ struct City {
     var cityId: String
     var name: String
     var main: Main
-    var weather: Weather
+    var weather: Weather?
     var wind: Wind
     
     init(dictionary: [String: Any]){
-        self.cityId = dictionary["id"] as? String ?? ""
-        self.name = dictionary["temp"] as? String ?? ""
-        self.main = Main(dictionary: dictionary["main"] as? Dictionary ?? [:])
-        self.wind = Wind(dictionary: dictionary["wind"] as? Dictionary ?? [:])
-        self.weather = Weather(dictionary: dictionary["weather"] as? Dictionary ?? [:])
+        self.cityId = String(describing: dictionary["id"] as? Int ?? 0)
+        self.name = dictionary["name"] as? String ?? ""
+        self.main = Main(dictionary: dictionary["main"] as? [String: Any] ?? [:])
+        self.wind =    Wind(dictionary: dictionary["wind"] as? [String: Any] ?? [:])
+        let dict = dictionary["weather"] as? [Any]
+        if let weatherDict = (dict?.first as? [String: Any]) {
+                self.weather = Weather(dictionary: weatherDict)
+        }
+        
     }
 }
 
@@ -56,17 +61,19 @@ struct Main{
     var humdity: String
     
     init(dictionary: [String: Any]){
-        self.temp = dictionary["temp"] as? String ?? ""
-        self.humdity = dictionary["humdity"] as? String ?? ""
+        self.temp = String(describing: dictionary["temp"] as? Float ?? 0)
+        self.humdity = String(describing: dictionary["humidity"] as? Int ?? 0)
 
     }
 }
 
 struct Weather {
     var weatherDescription: String
+    var code: Int
     
     init(dictionary: [String: Any]){
-        self.weatherDescription = dictionary["weatherDescription"] as? String ?? ""
+        self.weatherDescription = dictionary["description"] as? String ?? ""
+        self.code = dictionary["id"] as? Int ?? 0
     }
 }
 
@@ -74,6 +81,6 @@ struct Wind {
     var speed: String
     
     init(dictionary: [String : Any]){
-        self.speed = dictionary["speed"] as? String ?? ""
+        self.speed = String(describing: dictionary["speed"] as? Int ?? 0)
     }
 }

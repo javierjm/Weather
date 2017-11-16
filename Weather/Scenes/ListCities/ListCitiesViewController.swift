@@ -66,6 +66,10 @@ class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    let navigationTitleFont = UIFont(name: "Arvo", size: 22)!
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: navigationTitleFont,NSAttributedStringKey.foregroundColor: Constants.Colors.applicationLightBlue]
+
+    
     getLocalWeather()
   }
   
@@ -96,22 +100,49 @@ extension ListCitiesViewController {
         return lastUpdate
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
+        if let headerTitle = view as? UITableViewHeaderFooterView {
+            headerTitle.textLabel?.textColor = Constants.Colors.applicationLightBlue
+            headerTitle.textLabel?.font = UIFont(name: Constants.Fonts.applicationRegularArvo, size: 10)
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayedCities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let displayedCity = displayedCities[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell")
-        if cell == nil {
-            cell = UITableViewCell(style: .value1, reuseIdentifier: "OrderTableViewCell")
-        }
-        //  cell?.textLabel?.text = displayedCities.date
-        //  cell?.detailTextLabel?.text = displayedCities.total
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCitiesCell", for: indexPath) as! ListCitiesCell
+        cell.configureWithModel(displayedCity)
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+    }
+}
+
+protocol Configurable {
+    associatedtype T
+    var viewModel: T? { get set }
+    func configureWithModel(_: T)
+}
+
+class ListCitiesCell: UITableViewCell, Configurable {
+    @IBOutlet weak var wheaterImage: UIImageView!
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var tempetartureLabel: UILabel!
+    
+    var viewModel: ListCities.FetchCities.ViewModel.DisplayedCity?
+    
+    
+    func configureWithModel(_ viewModel: ListCities.FetchCities.ViewModel.DisplayedCity) {
+        self.viewModel = viewModel
+        self.cityNameLabel.text = viewModel.name
+        self.tempetartureLabel.text = viewModel.temperature
+        self.wheaterImage.image = UIImage(named: viewModel.weatherImageName)
     }
 }
