@@ -56,6 +56,7 @@
                                         <constraint firstItem="TCY-He-Cj9" firstAttribute="leading" secondItem="pcM-2n-UsO" secondAttribute="leadingMargin" constant="13" id="VtF-X3-b8y"/>
                                         <constraint firstItem="OsC-fv-MUW" firstAttribute="top" secondItem="TCY-He-Cj9" secondAttribute="bottom" constant="-2" id="k6B-yh-3qJ"/>
                                         <constraint firstItem="OsC-fv-MUW" firstAttribute="leading" secondItem="TCY-He-Cj9" secondAttribute="leading" id="ocx-pc-RFg"/>
+                                        <constraint firstItem="kww-85-t9M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TCY-He-Cj9" secondAttribute="trailing" constant="5" id="oly-Ht-SC4"/>
                                         <constraint firstItem="TCY-He-Cj9" firstAttribute="top" secondItem="pcM-2n-UsO" secondAttribute="topMargin" constant="16" id="t2z-Zc-R90"/>
                                         <constraint firstAttribute="trailing" secondItem="kww-85-t9M" secondAttribute="trailing" constant="32" id="tYV-2U-t4m"/>
                                     </constraints>
@@ -73,6 +74,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weather" id="bNy-yy-Mqm"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ol3-2L-rdj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tr4-LO-Lqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

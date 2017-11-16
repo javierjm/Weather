@@ -63,23 +63,17 @@ class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
   }
   
   // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    let navigationTitleFont = UIFont(name: "Arvo", size: 22)!
-    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: navigationTitleFont,NSAttributedStringKey.foregroundColor: Constants.Colors.applicationLightBlue]
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let navigationTitleFont = UIFont(name: "Arvo", size: 22)!
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: navigationTitleFont,NSAttributedStringKey.foregroundColor: Constants.Colors.applicationLightBlue]
+        self.refreshControl?.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        getLocalWeather()
+    }
     
-    getLocalWeather()
-  }
-  
-  func getLocalWeather(){
-    let request = ListCities.FetchCities.Request()
-    interactor?.fetchCities(request: request)
-  }
-  
-  
     func displayCities(viewModel: ListCities.FetchCities.ViewModel) {
+        refreshControl?.isEnabled = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         displayedCities = viewModel.displayedCities
         lastUpdate = viewModel.lastUpdate
         tableView.reloadData()
@@ -88,6 +82,19 @@ class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
     func presentError(response: Error) {
         
     }
+    
+    func getLocalWeather(){
+        let request = ListCities.FetchCities.Request()
+        interactor?.fetchLocationAndCities(request: request)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        refreshControl?.isEnabled = false
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        getLocalWeather()
+        refreshControl.endRefreshing()
+    }
+
 }
 
 extension ListCitiesViewController {

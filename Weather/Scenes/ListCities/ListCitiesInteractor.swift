@@ -11,22 +11,32 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol ListCitiesBusinessLogic {
-  func fetchCities(request: ListCities.FetchCities.Request)
+  func fetchLocationAndCities(request: ListCities.FetchCities.Request)
 }
 
 protocol ListCitiesDataStore {
   //var name: String { get set }
 }
 
-class ListCitiesInteractor: ListCitiesBusinessLogic, ListCitiesDataStore {
+class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStore {
+    
     var presenter: ListCitiesPresentationLogic?
     var worker: ListCitiesWorker?
+    var locationManager = CLLocationManager()
     
+    var request = ListCities.FetchCities.Request()
+    var coordinates = (lat: "", lon: "") {
+        didSet {
+            fetchCities(request: self.request)
+        }
+    }
+
     func fetchCities(request: ListCities.FetchCities.Request) {
         worker = ListCitiesWorker(citiesStore: WeatherAPI())
-        let coordinates = findCoordinates()
+        //let coordinates = findCoordinates()
         worker?.fetchCities(lat: coordinates.lat, lon: coordinates.lon, completionHandler: { (result: CitiesStoreResult<[City]>) in
             switch(result){
                 case .Failure(let error):
@@ -40,8 +50,35 @@ class ListCitiesInteractor: ListCitiesBusinessLogic, ListCitiesDataStore {
             }
         })
     }
+
     
-    func findCoordinates() ->(lat: String, lon: String) {
-        return ("‎9.9", "-84")
+    func fetchLocationAndCities(request: ListCities.FetchCities.Request) {
+        self.request = request
+
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.startUpdatingLocation()
+//        }
+        locationManager.delegate = self
+        locationManager.requestLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+
+    }
+}
+
+extension ListCitiesInteractor:  CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        self.coordinates = (String(describing: userLocation.coordinate.latitude), String(describing: userLocation.coordinate.longitude))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            // Presenter must show error
+            print("Error \(error.localizedDescription)")
     }
 }

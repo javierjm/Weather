@@ -24,7 +24,7 @@ class ListCitiesPresenter: ListCitiesPresentationLogic
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
+        dateFormatter.timeStyle = .medium
         return dateFormatter
     }()
     
