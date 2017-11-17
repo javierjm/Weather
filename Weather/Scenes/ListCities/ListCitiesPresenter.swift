@@ -14,7 +14,7 @@ import UIKit
 
 protocol ListCitiesPresentationLogic {
     func presentCities(response: ListCities.FetchCities.Response)
-    func presentError(response: Error)
+    func presentError(error: CitiesStoreError)
 }
 
 class ListCitiesPresenter: ListCitiesPresentationLogic
@@ -30,34 +30,23 @@ class ListCitiesPresenter: ListCitiesPresentationLogic
     
     func presentCities(response: ListCities.FetchCities.Response) {
         
-        let citiesViewModel = response.cities.map{ListCities.FetchCities.ViewModel.DisplayedCity(cityId: $0.cityId, name: $0.name, temperature: "\($0.main.temp)°", weatherImageName: self.iconImageNameForCode(code: $0.weather?.code))}
+        let citiesViewModel = response.cities.map{ListCities.FetchCities.ViewModel.DisplayedCity(cityId: $0.cityId,
+                                                                                                 name: $0.name,
+                                                                                                 temperature: "\($0.main.temp)°", weatherImageName: $0.iconImageNameForCode() )}
         let dateNow =  "Last Updated: \(dateFormatter.string(from: Date()))"
         let viewModel = ListCities.FetchCities.ViewModel(displayedCities: citiesViewModel, lastUpdate:dateNow)
         viewController?.displayCities(viewModel: viewModel)
     }
     
-    func presentError(response: Error) {
+    func presentError(error: CitiesStoreError) {
+        
+        switch(error) {
+            case .CannotFetch(let message):
+                let isConnectionDown = message.contains("offline")
+                viewController?.presentError(errorDescription: message, customView: isConnectionDown)
+            case .CannotFindLocation(let message):
+                viewController?.presentError(errorDescription: message, customView: false)
+        }
         
     }
-    
-    func iconImageNameForCode(code: Int?) -> String{
-        if let code = code {
-            switch code {
-            case 800:
-                return "sunny"
-            case 801 ..< 805:
-                return "sun-cloudy"
-            case 500 ..< 502:
-                return "sun-rainy"
-            case 502 ..< 532:
-                return "rainy"
-            case 905:
-                return "windy"
-            default:
-                return "sunny"
-            }
-        }
-        return ""
-    }
-    
 }

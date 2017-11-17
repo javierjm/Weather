@@ -96,22 +96,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0y-fC-MuD" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="0.0" width="338" height="273"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5KY-z2-UFx">
-                                        <rect key="frame" x="46" y="72" width="246" height="307"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Circle_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5KY-z2-UFx">
+                                        <rect key="frame" x="37" y="72" width="246" height="248"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="246" id="fg0-s1-ycy"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBd-nF-LcV">
-                                        <rect key="frame" x="132" y="346.5" width="74" height="23.5"/>
+                                        <rect key="frame" x="123" y="287.5" width="74" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun-cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-6Q-tum">
-                                        <rect key="frame" x="121.5" y="190" width="95" height="71"/>
+                                        <rect key="frame" x="112.5" y="160.5" width="95" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="XZE-I5-SKP"/>
                                             <constraint firstAttribute="width" secondItem="Tyh-6Q-tum" secondAttribute="height" multiplier="95:71" id="ZWh-EQ-NPU"/>
@@ -119,18 +119,18 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-icon-circle-bg" translatesAutoresizingMaskIntoConstraints="NO" id="oD4-u4-O9V">
-                                        <rect key="frame" x="159.5" y="229" width="85" height="60"/>
+                                        <rect key="frame" x="150.5" y="199.5" width="85" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Gco-Id-Wap"/>
                                             <constraint firstAttribute="width" secondItem="oD4-u4-O9V" secondAttribute="height" multiplier="17:12" id="OyE-RQ-bbf"/>
                                             <constraint firstAttribute="width" constant="85" id="XPa-ZA-HOS"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Zc-ofN">
-                                        <rect key="frame" x="181.5" y="245" width="41" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Zc-ofN">
+                                        <rect key="frame" x="177" y="215.5" width="32" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="F3q-yw-t5U"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="u6I-Tz-ZNi"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="41" id="u6I-Tz-ZNi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="21"/>
                                         <color key="textColor" red="0.043137254901960784" green="0.47450980392156861" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -149,28 +149,29 @@
                                     <constraint firstItem="5KY-z2-UFx" firstAttribute="baseline" secondItem="DBd-nF-LcV" secondAttribute="firstBaseline" constant="13.5" symbolType="layoutAnchor" id="Pon-ib-j7l"/>
                                     <constraint firstItem="fcP-Zc-ofN" firstAttribute="centerX" secondItem="oD4-u4-O9V" secondAttribute="centerX" id="Rp7-Rw-wbx"/>
                                     <constraint firstItem="DBd-nF-LcV" firstAttribute="centerX" secondItem="5KY-z2-UFx" secondAttribute="centerX" id="V55-2X-2Bd"/>
+                                    <constraint firstAttribute="bottom" secondItem="5KY-z2-UFx" secondAttribute="bottom" id="aYP-a1-FmN"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NCj-Ox-YD9">
-                                <rect key="frame" x="40" y="320" width="258" height="228"/>
+                                <rect key="frame" x="20" y="330" width="280" height="228"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bnM-rt-EsB" userLabel="Top - Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="258" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="94"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4jx-Fh-Zsa" userLabel="Min - Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="94"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="temp-min" translatesAutoresizingMaskIntoConstraints="NO" id="T5O-jq-6or">
-                                                        <rect key="frame" x="32" y="0.0" width="22" height="46"/>
+                                                        <rect key="frame" x="35.5" y="0.0" width="22" height="46"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdE-gR-uVo">
-                                                        <rect key="frame" x="25" y="46" width="36.5" height="28"/>
+                                                        <rect key="frame" x="28.5" y="46" width="36.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWt-ih-D9G">
-                                                        <rect key="frame" x="27.5" y="74" width="31.5" height="20"/>
+                                                        <rect key="frame" x="31" y="74" width="31.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -178,19 +179,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tJ9-Sb-MiQ" userLabel="Med - Stack View">
-                                                <rect key="frame" x="86" y="0.5" width="86" height="93"/>
+                                                <rect key="frame" x="93.5" y="0.5" width="93" height="93"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="temp-med" translatesAutoresizingMaskIntoConstraints="NO" id="BmX-97-atB">
-                                                        <rect key="frame" x="32.5" y="0.0" width="21" height="45"/>
+                                                        <rect key="frame" x="36" y="0.0" width="21" height="45"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy1-Nk-8Fa">
-                                                        <rect key="frame" x="25" y="45" width="36.5" height="28"/>
+                                                        <rect key="frame" x="28.5" y="45" width="36.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-PV-f0K">
-                                                        <rect key="frame" x="24.5" y="73" width="37.5" height="20"/>
+                                                        <rect key="frame" x="28" y="73" width="37.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -198,19 +199,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-Np-mME" userLabel="Max - Stack View">
-                                                <rect key="frame" x="172" y="0.0" width="86" height="94"/>
+                                                <rect key="frame" x="186.5" y="0.0" width="93.5" height="94"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" image="temp-max" translatesAutoresizingMaskIntoConstraints="NO" id="h7L-GF-K82">
-                                                        <rect key="frame" x="32" y="0.0" width="22" height="46"/>
+                                                        <rect key="frame" x="36" y="0.0" width="22" height="46"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCn-vx-5dt">
-                                                        <rect key="frame" x="25" y="46" width="36.5" height="28"/>
+                                                        <rect key="frame" x="28.5" y="46" width="36.5" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1y-3H-rVc">
-                                                        <rect key="frame" x="25" y="74" width="36.5" height="20"/>
+                                                        <rect key="frame" x="28.5" y="74" width="36.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -220,26 +221,26 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bpz-bV-nJf" userLabel="Bottom - Stack View">
-                                        <rect key="frame" x="0.0" y="134" width="258" height="94"/>
+                                        <rect key="frame" x="0.0" y="134" width="280" height="94"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="duh-ek-KzL" userLabel="Hum - Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="94"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="rainy" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-rr-kIH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="45"/>
+                                                        <rect key="frame" x="3.5" y="0.0" width="86" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="DJT-EJ-rpG"/>
                                                             <constraint firstAttribute="width" secondItem="pq1-rr-kIH" secondAttribute="height" multiplier="86:45" id="NCy-1Z-1C0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D47-Ob-ZUm">
-                                                        <rect key="frame" x="17.5" y="45" width="51" height="28"/>
+                                                        <rect key="frame" x="21" y="45" width="51" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Hum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-UM-pet">
-                                                        <rect key="frame" x="25" y="73" width="36.5" height="21"/>
+                                                        <rect key="frame" x="28.5" y="73" width="36.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -247,19 +248,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ycl-gE-b5d" userLabel="Atm - Stack View">
-                                                <rect key="frame" x="86" y="0.0" width="86" height="94"/>
+                                                <rect key="frame" x="93.5" y="0.0" width="93" height="94"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atm" translatesAutoresizingMaskIntoConstraints="NO" id="exe-bH-LJM">
-                                                        <rect key="frame" x="24.5" y="0.0" width="37" height="45"/>
+                                                        <rect key="frame" x="28" y="0.0" width="37" height="45"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-Fe-3nu">
-                                                        <rect key="frame" x="29.5" y="45" width="27" height="28"/>
+                                                        <rect key="frame" x="33" y="45" width="27" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Atm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W30-eU-HnM">
-                                                        <rect key="frame" x="27.5" y="73" width="31" height="21"/>
+                                                        <rect key="frame" x="31" y="73" width="31" height="21"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -267,23 +268,23 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9FN-nY-Pny" userLabel="Wind - Stack View">
-                                                <rect key="frame" x="172" y="0.0" width="86" height="94"/>
+                                                <rect key="frame" x="186.5" y="0.0" width="93.5" height="94"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windy" translatesAutoresizingMaskIntoConstraints="NO" id="Vnz-wl-BE0">
-                                                        <rect key="frame" x="31" y="0.0" width="24" height="45"/>
+                                                        <rect key="frame" x="35" y="0.0" width="24" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Vnz-wl-BE0" secondAttribute="height" multiplier="8:15" id="N6a-3U-LPA"/>
                                                             <constraint firstAttribute="height" constant="45" id="elJ-k4-dHp"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fi-DO-y5O">
-                                                        <rect key="frame" x="29.5" y="45" width="27" height="28"/>
+                                                        <rect key="frame" x="33.5" y="45" width="27" height="28"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-vP-G75">
-                                                        <rect key="frame" x="22.5" y="73" width="41" height="21"/>
+                                                        <rect key="frame" x="26.5" y="73" width="41" height="21"/>
                                                         <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -312,12 +313,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G0y-fC-MuD" firstAttribute="top" secondItem="Cqb-0s-4gq" secondAttribute="top" id="05J-dY-8Hd"/>
-                            <constraint firstItem="NCj-Ox-YD9" firstAttribute="top" secondItem="G0y-fC-MuD" secondAttribute="bottom" constant="47" id="0i1-93-KXA"/>
+                            <constraint firstItem="NCj-Ox-YD9" firstAttribute="top" secondItem="G0y-fC-MuD" secondAttribute="bottom" constant="10" id="0i1-93-KXA"/>
                             <constraint firstItem="G0y-fC-MuD" firstAttribute="leading" secondItem="Cqb-0s-4gq" secondAttribute="leading" id="3Ex-7H-sj7"/>
-                            <constraint firstItem="8GR-0L-JCV" firstAttribute="trailing" secondItem="NCj-Ox-YD9" secondAttribute="trailing" constant="40" id="7DL-P5-h0x"/>
-                            <constraint firstItem="8GR-0L-JCV" firstAttribute="bottom" secondItem="NCj-Ox-YD9" secondAttribute="bottom" constant="20" id="kgX-LA-awg"/>
+                            <constraint firstItem="8GR-0L-JCV" firstAttribute="trailing" secondItem="NCj-Ox-YD9" secondAttribute="trailing" constant="20" id="7DL-P5-h0x"/>
+                            <constraint firstItem="8GR-0L-JCV" firstAttribute="bottom" secondItem="NCj-Ox-YD9" secondAttribute="bottom" constant="10" id="kgX-LA-awg"/>
                             <constraint firstAttribute="trailing" secondItem="G0y-fC-MuD" secondAttribute="trailing" id="sK3-II-HIJ"/>
-                            <constraint firstItem="NCj-Ox-YD9" firstAttribute="leading" secondItem="8GR-0L-JCV" secondAttribute="leading" constant="40" id="wli-yf-2r7"/>
+                            <constraint firstItem="NCj-Ox-YD9" firstAttribute="leading" secondItem="8GR-0L-JCV" secondAttribute="leading" constant="20" id="wli-yf-2r7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8GR-0L-JCV"/>
                     </view>

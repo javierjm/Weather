@@ -71,8 +71,6 @@ class ShowCityViewController: UIViewController, ShowCityDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
         fetchCityWeather()
     }
     

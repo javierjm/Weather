@@ -41,9 +41,7 @@ class ListCitiesInteractor:NSObject, ListCitiesBusinessLogic, ListCitiesDataStor
         worker?.fetchCities(lat: coordinates.lat, lon: coordinates.lon, completionHandler: { (result: CitiesStoreResult<[City]>) in
             switch(result){
                 case .Failure(let error):
-                    print("There was an error fetching cities: \(error.localizedDescription)")
-                    // Call presenter with error description
-                    self.presenter?.presentError(response: error)
+                    self.presenter?.presentError(error: error)
                 case .Success(let results):
                     self.cities = results
                     let response = ListCities.FetchCities.Response(cities: results)
@@ -71,7 +69,6 @@ extension ListCitiesInteractor:  CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            // Presenter must show error
-            print("Error \(error.localizedDescription)")
+        self.presenter?.presentError(error: CitiesStoreError.CannotFindLocation("Weather app needs access to location services, please allow access in Settings/Weather/Location"))
     }
 }

@@ -20,7 +20,6 @@ class ShowCityPresenter: ShowCityPresentationLogic {
   weak var viewController: ShowCityDisplayLogic?
   
   // MARK: present City
-  
   func presentCity(response: ShowCity.GetCity.Response) {
     let city = response.city
     let displayedCity = ShowCity.GetCity.ViewModel.DisplayedCity(id: city.cityId,
@@ -34,7 +33,6 @@ class ShowCityPresenter: ShowCityPresentationLogic {
                                                                  atm: city.main.atm,
                                                                  windSpeed: city.wind.speed,
                                                                  imageName: city.iconImageNameForCode())
-    // city?.iconImageNameForCode()
     
     let viewModel = ShowCity.GetCity.ViewModel(displayedCity: displayedCity)
     viewController?.displayCity(viewModel: viewModel)

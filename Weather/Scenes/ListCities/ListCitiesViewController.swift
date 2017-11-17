@@ -14,7 +14,7 @@ import UIKit
 
 protocol ListCitiesDisplayLogic: class {
     func displayCities(viewModel: ListCities.FetchCities.ViewModel)
-    func presentError(response: Error)
+    func presentError(errorDescription: String, customView: Bool)
 }
 
 class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
@@ -67,20 +67,28 @@ class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
         super.viewDidLoad()
         let navigationTitleFont = UIFont(name: "Arvo", size: 22)!
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: navigationTitleFont,NSAttributedStringKey.foregroundColor: Constants.Colors.applicationLightBlue]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.refreshControl?.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         getLocalWeather()
     }
     
     func displayCities(viewModel: ListCities.FetchCities.ViewModel) {
         refreshControl?.isEnabled = true
+        tableView.restore()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         displayedCities = viewModel.displayedCities
         lastUpdate = viewModel.lastUpdate
         tableView.reloadData()
     }
     
-    func presentError(response: Error) {
-        
+    func presentError(errorDescription: String, customView: Bool) {
+        refreshControl?.isEnabled = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        if (customView){
+            tableView.setErrorView()
+        } else {
+            tableView.setErrorMessage(errorDescription)
+        }
     }
     
     func getLocalWeather(){
@@ -96,6 +104,8 @@ class ListCitiesViewController: UITableViewController, ListCitiesDisplayLogic {
     }
 
 }
+
+// MARK: UITableView Configuration
 
 extension ListCitiesViewController {
     
@@ -126,10 +136,6 @@ extension ListCitiesViewController {
         
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    }
 }
 
 protocol Configurable {
@@ -151,5 +157,39 @@ class ListCitiesCell: UITableViewCell, Configurable {
         self.cityNameLabel.text = viewModel.name
         self.tempetartureLabel.text = viewModel.temperature
         self.wheaterImage.image = UIImage(named: viewModel.weatherImageName)
+    }
+}
+
+
+extension UITableView {
+    
+    func setErrorView() {
+        
+        let imageView = UIImageView(image: UIImage(named:Constants.Images.nonConnection));
+        imageView.contentMode = .center
+        self.backgroundView = imageView;
+        self.separatorStyle = .none;
+        self.separatorColor = .clear;
+    }
+    
+    func setErrorMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: Constants.Fonts.applicationRegularArvo, size: 15)
+        messageLabel.sizeToFit()
+        
+        self.backgroundView = messageLabel;
+        self.separatorColor = .clear;
+    }
+
+    
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+        self.separatorColor = .lightGray;
+
     }
 }

@@ -13,4 +13,8 @@ enum Constants {
     enum Fonts {
         static let applicationRegularArvo = "Arvo"
     }
+    
+    enum Images {
+        static let nonConnection = "check_connection"
+    }
 }
