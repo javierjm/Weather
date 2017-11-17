@@ -26,3 +26,7 @@ Product -> Scheme -> Edit Scheme -> Options -> Allow Location Simulation must be
 ## Pending. 
 
 In order to have the project in the best form it MUST need to implement test. I now in a TDD test should go first, but I'd say this is one of the pitfails for Clean Swift, writing tests can be messy for covering all the architecture layers, due the lack of time I decided to leave test fo the end, however haven't any yet, is quite possible will update this in future commits. 
+
+## Different Approach
+
+Just as a note there is a requirement for displaying an Alert Controller on localization permissions disabled. I'm showing a view instead of that, should be a quick change, but will leave my current implementation for now. 
